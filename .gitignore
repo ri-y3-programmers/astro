@@ -1,0 +1,11 @@
+*.csproj
+*.sln
+*.apk
+*.unitypackage
+*.tmp
+
+Library
+Build
+Temp
+
+sysinfo.txt
