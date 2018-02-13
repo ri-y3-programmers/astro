@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
-    private float rotate_speed = 4f;
-    private float max_forward_speed = 7f;
-    private float min_forward_speed = 5f;
-    private float deceleration = 0.99f;
     private bool rotating = true;
+
+    public float rotate_speed = 4f;
+    public float max_forward_speed = 7f;
+    public float min_forward_speed = 5f;
+    public float deceleration = 0.99f;
+    public GameObject bullet_prefab;
     
     void Start() {
 	rb = GetComponent<Rigidbody2D>();
@@ -37,7 +39,12 @@ public class PlayerController : MonoBehaviour {
 		rb.velocity = transform.up * max_forward_speed;
 	    }
 	}
-	else
+	else {
 	    rb.velocity = deceleration * rb.velocity;
+	}
+
+	if (Input.GetButton("player_shoot")) {
+	    Instantiate(bullet_prefab, transform.position, transform.rotation);
+	}
     }
 }
