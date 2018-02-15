@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 	    rb.velocity = deceleration * rb.velocity;
 	}
 
-	if (Input.GetButton("player_shoot")) {
+	if (Input.GetButtonDown("player_shoot")) {
 	    Instantiate(bullet_prefab, transform.position, transform.rotation);
 	}
     }
