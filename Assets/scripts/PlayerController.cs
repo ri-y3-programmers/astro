@@ -43,8 +43,17 @@ public class PlayerController : MonoBehaviour {
 	    rb.velocity = deceleration * rb.velocity;
 	}
 
-	if (Input.GetButtonDown("player_shoot")) {
-	    Instantiate(bullet_prefab, transform.position, transform.rotation);
+	if (Input.GetButtonDown(key_shoot)) {
+	    bullet = Instantiate(bullet_prefab, transform.position, transform.rotation);
+	    bullet.GetComponent<BulletController>().shooter = this.tag;
+	}
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+	string shooter = other.gameObject.GetComponent<BulletController>().shooter;
+	if (other.CompareTag("bullet") && shooter != tag) {
+	    Destroy(other.gameObject);
+	    Destroy(this.gameObject);
 	}
     }
 }

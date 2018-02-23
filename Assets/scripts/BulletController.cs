@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
     private Rigidbody2D rb;
-    private GameObject player;
 
-    public GameObject self;
+    public string shooter;
     public float speed = 100f;
     public float destroy_threshold = 100f;
 
     void Start() {
-	player = GameObject.FindWithTag("player_1");
 	rb = GetComponent<Rigidbody2D>();
 	rb.velocity = transform.up * speed;
     }
@@ -19,7 +17,7 @@ public class BulletController : MonoBehaviour {
     void Update() {
 	if (Mathf.Abs(transform.position.x) > destroy_threshold ||
 	    Mathf.Abs(transform.position.y) > destroy_threshold) {
-	    Object.Destroy(this.self);
+	    Destroy(gameObject);
 	}
     }
 }

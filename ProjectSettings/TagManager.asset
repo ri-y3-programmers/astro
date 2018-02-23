@@ -11,6 +11,7 @@ TagManager:
   - wall_right
   - wall_top
   - wall_bottom
+  - player_2
   layers:
   - Default
   - TransparentFX
