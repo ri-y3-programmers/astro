@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     private bool rotating = true;
+    private GameObject bullet;
+
+    private string key_forward;
+    private string key_left;
+    private string key_right;
+    private string key_shoot;
 
     public float rotate_speed = 4f;
     public float max_forward_speed = 7f;
@@ -14,24 +20,29 @@ public class PlayerController : MonoBehaviour {
     
     void Start() {
 	rb = GetComponent<Rigidbody2D>();
+	rb.freezeRotation = true;
+	key_forward = tag + "_forward";
+	key_left = tag + "_left";
+	key_right = tag + "_right";
+	key_shoot = tag + "_shoot";
     }
 
-    void FixedUpdate() {
-	if (Input.GetButton("player_left")) {
+    void Update() {
+	if (Input.GetButton(key_left)) {
 	    rotating = true;
 	    transform.Rotate(Vector3.forward * rotate_speed);
 	}
 
-	if (Input.GetButton("player_right")) {
+	if (Input.GetButton(key_right)) {
 	    rotating = true;
 	    transform.Rotate(Vector3.back * rotate_speed);
 	}
 
-	if (!Input.GetButton("player_left") && !Input.GetButton("player_right")) {
+	if (!Input.GetButton(key_left) && !Input.GetButton(key_right)) {
 	    rotating = false;
 	}
 
-	if (Input.GetButton("player_forward")) {
+	if (Input.GetButton(key_forward)) {
 	    if (rotating) {
 		rb.velocity = transform.up * min_forward_speed;
 	    }
