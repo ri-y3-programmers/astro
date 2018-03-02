@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
     private Rigidbody2D rb;
     private bool rotating = true;
     private GameObject bullet;
@@ -27,7 +28,18 @@ public class PlayerController : MonoBehaviour {
 	key_shoot = tag + "_shoot";
     }
 
+    public override void OnStartLocalPlayer() {
+	// Make camera follow current player
+	Camera.main.GetComponent<CameraController>().enabled = true;
+	Camera.main.GetComponent<CameraController>().player_transform = transform;
+    }
+
     void Update() {
+	// Ensure control only over current player
+	if (!isLocalPlayer) {
+	    return;
+	}
+
 	if (Input.GetButton(key_left)) {
 	    rotating = true;
 	    transform.Rotate(Vector3.forward * rotate_speed);

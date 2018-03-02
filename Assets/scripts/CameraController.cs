@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    private Vector3 offset;
-
-    public GameObject player;
-
-    void Start() {
-	offset = transform.position - player.transform.position;
-    }
+    public Transform player_transform;
+    public int depth = -10;
 
     void LateUpdate() {
-	transform.position = player.transform.position + offset;
+	transform.position = player_transform.position + new Vector3(0, 0, depth);
     }
 }
