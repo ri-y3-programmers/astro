@@ -4,14 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - player_1
-  - background
   - bullet
-  - wall_left
-  - wall_right
-  - wall_top
-  - wall_bottom
-  - player_2
   - player
   layers:
   - Default

@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 571289529}
   m_Layer: 0
   m_Name: wall_left
-  m_TagString: wall_left
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1047594672}
   m_Layer: 0
   m_Name: wall_right
-  m_TagString: wall_right
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 1210985338}
   m_Layer: 0
   m_Name: wall_top
-  m_TagString: wall_top
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 1274587201}
   m_Layer: 0
   m_Name: wall_bottom
-  m_TagString: wall_bottom
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1220391261343802, guid: 088646269faa84b8fbda5d258b7b861c,
+  m_PlayerPrefab: {fileID: 1220391261343802, guid: d226c8e3018224e008fc8324207c596f,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
